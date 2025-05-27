@@ -2,11 +2,12 @@ import tkinter as tk  #bibliotecas
 from tkinter import messagebox
 from PIL import Image, ImageTk
 
-def verificar_login():  # login do usuario
+# login do usuario
+def verificar_login():  
     usuario = entrada_usuario.get()
     senha = entrada_senha.get()
 
-    if usuario == "Teste" and senha == "Teste":
+    if usuario == "usuario" and senha == "senha":
         messagebox.showinfo("Sucesso", "Login realizado com sucesso!")
         janela.destroy()
     else: 
@@ -16,19 +17,19 @@ janela = tk.Tk()   # Tela
 janela.title("Sistema de Login")
 janela.geometry("1280x720")  # Tamanho fixo opcional
 
-# Imagem de fundo
-imagem_fundo = Image.open("fundo.jpg")
+# fundo
+imagem_fundo = Image.open("fundo.webp")
 imagem_fundo = imagem_fundo.resize((1280, 720))  # Ajusta ao tamanho da janela
 fundo = ImageTk.PhotoImage(imagem_fundo)
 
 label_fundo = tk.Label(janela, image=fundo)
 label_fundo.place(relwidth=1, relheight=1)
 
-# Frame para conter os widgets com fundo semi-transparente
+# frame para os widgets
 frame = tk.Frame(janela, bg="#000000", bd=5)
 frame.place(relx=0.5, rely=0.5, anchor="center")
 
-# Estilo dos textos
+# formatação dos textos
 fonte = ("Arial", 12, "bold")
 cor_texto = "white"
 
